@@ -8,7 +8,6 @@ public class Gmail extends Email {
     Date date;
     String sender;
     String message;
-    Gmail gmail;
     //Inbox: Stores mails. Each mail has date (Date), sender (String), message (String). It is guaranteed that message is distinct for all mails.
     //Trash: Stores mails. Each mail has date (Date), sender (String), message (String)
     private Deque<Mail> Inbox;
@@ -45,7 +44,7 @@ public class Gmail extends Email {
         while(!Inbox.isEmpty()){
             Mail mail = Inbox.pop();
             if(mail.getMesssage().equals(message))
-                continue;
+                Trash.add(mail);
            store.push(mail);
         }
 
