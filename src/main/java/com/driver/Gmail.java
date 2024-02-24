@@ -5,9 +5,6 @@ import java.util.*;
 public class Gmail extends Email {
 
     int inboxCapacity; //maximum number of mails inbox can store
-    Date date;
-    String sender;
-    String message;
     //Inbox: Stores mails. Each mail has date (Date), sender (String), message (String). It is guaranteed that message is distinct for all mails.
     //Trash: Stores mails. Each mail has date (Date), sender (String), message (String)
     private Deque<Mail> Inbox;
@@ -43,7 +40,7 @@ public class Gmail extends Email {
 
         while(!Inbox.isEmpty()){
             Mail mail = Inbox.pop();
-            if(mail.getMesssage().equals(message))
+            if(mail.getMessage().equals(message))
                 Trash.add(mail);
            store.push(mail);
         }
@@ -69,7 +66,7 @@ public class Gmail extends Email {
             return null;
 
         Mail mail = Inbox.getLast();
-        return mail.getMesssage();
+        return mail.getMessage();
     }
 
     public int findMailsBetweenDates(Date start, Date end){
@@ -106,5 +103,30 @@ public class Gmail extends Email {
     public int getInboxCapacity() {
         // Return the maximum number of mails that can be stored in the inbox
         return this.inboxCapacity;
+    }
+
+
+    private static class Mail{
+        private Date date;
+        private String senderId;
+        private String message;
+
+        public Mail(Date date, String senderId, String message) {
+            this.date = date;
+            this.senderId = senderId;
+            this.message = message;
+        }
+
+        public Date getDate() {
+            return date;
+        }
+
+        public String getSender() {
+            return senderId;
+        }
+
+        public String getMessage() {
+            return message;
+        }
     }
 }
