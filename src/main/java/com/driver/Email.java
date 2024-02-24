@@ -62,7 +62,7 @@ public class Email {
 
             if (isLenOk && isUpperCase && isLowerCase && isDigitOk && isSpeCharOk){
                 this.password = newPassword;
-                System.out.println("New Password is updated");
+//                System.out.println("New Password is updated");
                 }
 //             if(!isLenOk)
 //                System.out.println("Length is short");
@@ -76,7 +76,7 @@ public class Email {
 //                System.out.println("Spe char is not ok");
 //            System.out.println();
         }
-        else
-            System.out.println("Old password is incorrect");
+//        else
+//            System.out.println("Old password is incorrect");
     }
 }

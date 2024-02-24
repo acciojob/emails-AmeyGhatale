@@ -33,7 +33,7 @@ public class Workspace extends Gmail{
             }
         });
 
-        int count = 1;
+        int count = 0;
         LocalTime prevEnd = LocalTime.MIN;
         for (Meeting meeting : calendar) {
             LocalTime stPt = meeting.getStartTime();
