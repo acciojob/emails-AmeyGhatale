@@ -56,7 +56,7 @@ public class Gmail extends Email {
             return null;
 
         Mail mail = Inbox.getFirst();
-        return mail.getMesssage();
+        return mail.getMessage();
     }
 
     public String findOldestMessage(){
